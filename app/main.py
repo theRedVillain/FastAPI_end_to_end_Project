@@ -9,6 +9,7 @@ models.Base.metadata.create_all(bind=engine)
 get_db()  
 
 app.include_router(posts_router)
+app.include_router(user_router)
 
 
 

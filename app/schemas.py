@@ -1,4 +1,4 @@
-from pydantic import BaseModel 
+from pydantic import BaseModel , EmailStr
 from datetime import datetime
 
 
@@ -12,4 +12,20 @@ class posts_response(BaseModel):
     created_at : datetime 
     class Config:
         orm_mode = True 
+class users_data(BaseModel):
+    email : EmailStr
+    password : str
+
+class users_response(BaseModel):
+    email : str
+    onboarding_date : datetime 
+    class Config:
+        orm_mode = True 
+
+class User_Email(BaseModel):
+    email : EmailStr 
+
+class update_user_password(users_data):
+    pass
+
 
